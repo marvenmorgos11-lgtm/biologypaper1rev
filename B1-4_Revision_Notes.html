@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AQA GCSE Biology B1–4 Revision Notes | Grade 7</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+
+  :root {
+    --b1: #1a6b3a;
+    --b2: #1a4f8a;
+    --b3: #7a1a6b;
+    --b4: #8a4a00;
+    --b1-light: #e8f5ee;
+    --b2-light: #e8f0fa;
+    --b3-light: #f5e8f3;
+    --b4-light: #faf0e0;
+    --text: #1a1a2e;
+    --border: #ddd;
+    --highlight: #fff3cd;
+    --exam-tip: #fff0f0;
+    --exam-tip-border: #e74c3c;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 10.5pt;
+    color: var(--text);
+    background: white;
+    line-height: 1.5;
+  }
+
+  /* ── COVER PAGE ── */
+  .cover {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a6b3a 0%, #1a4f8a 35%, #7a1a6b 65%, #8a4a00 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 40px;
+    page-break-after: always;
+  }
+  .cover-badge {
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 50px;
+    padding: 6px 20px;
+    font-size: 9pt;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .cover h1 {
+    font-size: 42pt;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .cover h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 18pt;
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.9;
+    margin-bottom: 40px;
+  }
+  .cover-topics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 500px;
+    margin-bottom: 40px;
+  }
+  .cover-topic {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 9pt;
+    font-weight: 700;
+  }
+  .cover-topic span {
+    display: block;
+    font-size: 7.5pt;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-top: 2px;
+  }
+  .cover-footer {
+    font-size: 8.5pt;
+    opacity: 0.6;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-break {
+    page-break-before: always;
+    padding-top: 6px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    color: white;
+  }
+  .section-header.b1 { background: var(--b1); }
+  .section-header.b2 { background: var(--b2); }
+  .section-header.b3 { background: var(--b3); }
+  .section-header.b4 { background: var(--b4); }
+
+  .section-number {
+    font-size: 22pt;
+    font-weight: 900;
+    opacity: 0.6;
+    line-height: 1;
+  }
+  .section-header h2 {
+    font-size: 15pt;
+    font-weight: 800;
+  }
+  .section-header p {
+    font-size: 8.5pt;
+    opacity: 0.8;
+    margin-top: 2px;
+  }
+
+  /* ── TOPIC CARDS ── */
+  .topic {
+    margin-bottom: 14px;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    overflow: hidden;
+  }
+  .topic-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    font-weight: 800;
+    font-size: 9.5pt;
+    color: white;
+  }
+  .topic-title.b1 { background: var(--b1); }
+  .topic-title.b2 { background: var(--b2); }
+  .topic-title.b3 { background: var(--b3); }
+  .topic-title.b4 { background: var(--b4); }
+
+  .topic-code {
+    font-size: 7.5pt;
+    font-weight: 700;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+  }
+  .topic-body {
+    padding: 10px 14px;
+    background: white;
+  }
+  .topic-body.b1-bg { background: var(--b1-light); }
+  .topic-body.b2-bg { background: var(--b2-light); }
+  .topic-body.b3-bg { background: var(--b3-light); }
+  .topic-body.b4-bg { background: var(--b4-light); }
+
+  /* ── CONTENT ELEMENTS ── */
+  .point {
+    display: flex;
+    gap: 7px;
+    margin-bottom: 5px;
+    font-size: 9.5pt;
+    line-height: 1.4;
+  }
+  .point::before {
+    content: "▸";
+    flex-shrink: 0;
+    font-size: 8pt;
+    margin-top: 2px;
+    opacity: 0.6;
+  }
+  .point strong { font-weight: 800; }
+
+  .mini-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8.5pt;
+    margin: 8px 0;
+  }
+  .mini-table th {
+    background: rgba(0,0,0,0.08);
+    padding: 5px 8px;
+    text-align: left;
+    font-weight: 800;
+    border: 1px solid var(--border);
+  }
+  .mini-table td {
+    padding: 4px 8px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.35;
+  }
+  .mini-table tr:nth-child(even) td { background: rgba(255,255,255,0.5); }
+
+  .equation-box {
+    background: white;
+    border: 2px dashed rgba(0,0,0,0.2);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 11pt;
+    text-align: center;
+    margin: 8px 0;
+    font-weight: 600;
+  }
+
+  .exam-tip {
+    background: var(--exam-tip);
+    border-left: 3px solid var(--exam-tip-border);
+    border-radius: 0 6px 6px 0;
+    padding: 7px 10px;
+    margin: 8px 0;
+    font-size: 8.5pt;
+    line-height: 1.4;
+  }
+  .exam-tip strong {
+    color: var(--exam-tip-border);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 7pt;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .highlight-box {
+    background: var(--highlight);
+    border-radius: 6px;
+    padding: 7px 10px;
+    margin: 8px 0;
+    font-size: 8.5pt;
+  }
+  .highlight-box strong {
+    font-size: 7pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    color: #7a6000;
+    margin-bottom: 2px;
+  }
+
+  .practical-box {
+    background: #f0f7ff;
+    border: 1.5px solid #90b8e0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 8px 0;
+    font-size: 8.5pt;
+  }
+  .practical-box strong {
+    display: block;
+    font-size: 7pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1a4f8a;
+    margin-bottom: 3px;
+  }
+
+  /* ── TWO COLUMN ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 6px 0;
+  }
+  .col-box {
+    background: rgba(255,255,255,0.5);
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 8.5pt;
+  }
+  .col-box h4 {
+    font-size: 8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    opacity: 0.7;
+  }
+
+  /* ── LAYOUT ── */
+  .page {
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 14mm 14mm 10mm;
+  }
+  .two-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { font-size: 9.5pt; }
+    .page { padding: 10mm 12mm 8mm; max-width: 100%; }
+    .section-break { page-break-before: always; }
+    .no-break { page-break-inside: avoid; }
+    .cover { min-height: auto; padding: 40px; }
+    .cover h1 { font-size: 36pt; }
+  }
+
+  @page { size: A4; margin: 0; }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+    margin: 10px 0;
+  }
+  .sub-head {
+    font-size: 8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #666;
+    margin: 8px 0 4px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ COVER ══════════════ -->
+<div class="cover">
+  <div class="cover-badge">AQA GCSE Biology · Paper 1</div>
+  <h1>B1–4<br>Revision</h1>
+  <h2>Grade 7 Summary Notes</h2>
+  <div class="cover-topics">
+    <div class="cover-topic" style="border-top: 3px solid #6ee8a0">
+      B1 — Cell Biology
+      <span>Cells · Mitosis · Transport</span>
+    </div>
+    <div class="cover-topic" style="border-top: 3px solid #6aaee8">
+      B2 — Organisation
+      <span>Digestion · Heart · Plants</span>
+    </div>
+    <div class="cover-topic" style="border-top: 3px solid #e8a0e0">
+      B3 — Infection & Response
+      <span>Pathogens · Immunity · Drugs</span>
+    </div>
+    <div class="cover-topic" style="border-top: 3px solid #e8c06a">
+      B4 — Bioenergetics
+      <span>Photosynthesis · Respiration</span>
+    </div>
+  </div>
+  <div class="cover-footer">All required practicals included · Key equations highlighted</div>
+</div>
+
+<!-- ══════════════ B1: CELL BIOLOGY ══════════════ -->
+<div class="page section-break">
+
+  <div class="section-header b1">
+    <div class="section-number">B1</div>
+    <div>
+      <h2>Cell Biology</h2>
+      <p>4.1.1 Cell Structure · 4.1.2 Cell Division · 4.1.3 Transport</p>
+    </div>
+  </div>
+
+  <!-- Eukaryotes vs Prokaryotes -->
+  <div class="topic no-break">
+    <div class="topic-title b1"><span class="topic-code">4.1.1.1</span> Eukaryotes vs Prokaryotes</div>
+    <div class="topic-body b1-bg">
+      <table class="mini-table">
+        <tr><th>Feature</th><th>Eukaryotic (animal/plant)</th><th>Prokaryotic (bacteria)</th></tr>
+        <tr><td>Size</td><td>5–100 µm</td><td>0.2–2.0 µm</td></tr>
+        <tr><td>DNA</td><td>In a nucleus (linear)</td><td>Free in cytoplasm + plasmids</td></tr>
+        <tr><td>Organelles</td><td>Mitochondria, chloroplasts, ribosomes</td><td>Ribosomes only (no mitochondria/chloroplasts)</td></tr>
+        <tr><td>Cell division</td><td>Mitosis</td><td>Binary fission</td></tr>
+      </table>
+      <div class="exam-tip"><strong>⚡ Exam Tip</strong> Bacteria are prokaryotes — they have NO nucleus. Their DNA floats freely in the cytoplasm.</div>
+    </div>
+  </div>
+
+  <!-- Animal & Plant Cells -->
+  <div class="topic no-break">
+    <div class="topic-title b1"><span class="topic-code">4.1.1.2</span> Animal & Plant Cells</div>
+    <div class="topic-body b1-bg">
+      <div class="two-col">
+        <div class="col-box">
+          <h4>Both have</h4>
+          <div class="point"><strong>Nucleus</strong> — contains DNA, controls cell activity</div>
+          <div class="point"><strong>Cytoplasm</strong> — jelly-like; where reactions occur</div>
+          <div class="point"><strong>Cell membrane</strong> — controls what enters/exits</div>
+          <div class="point"><strong>Mitochondria</strong> — site of aerobic respiration (energy release)</div>
+          <div class="point"><strong>Ribosomes</strong> — where protein synthesis occurs</div>
+        </div>
+        <div class="col-box">
+          <h4>Plant cells also have</h4>
+          <div class="point"><strong>Cell wall</strong> — cellulose; gives strength/support</div>
+          <div class="point"><strong>Chloroplasts</strong> — contain chlorophyll; absorb light for photosynthesis</div>
+          <div class="point"><strong>Permanent vacuole</strong> — filled with cell sap; keeps cell turgid</div>
+        </div>
+      </div>
+      <div class="exam-tip"><strong>⚡ Exam Tip</strong> Learn the formula: <em>Magnification = Size of image ÷ Real size of object</em>. Electron microscopes have higher magnification AND better resolution than light microscopes.</div>
+    </div>
+  </div>
+
+  <!-- Cell Specialisation & Differentiation -->
+  <div class="topic no-break">
+    <div class="topic-title b1"><span class="topic-code">4.1.1.3–4</span> Cell Specialisation & Differentiation</div>
+    <div class="topic-body b1-bg">
+      <div class="highlight-box"><strong>Key Idea</strong>Differentiation = a cell developing specialised sub-cellular structures to carry out a specific function.</div>
+      <table class="mini-table">
+        <tr><th>Cell</th><th>Adaptation</th><th>Function</th></tr>
+        <tr><td>Sperm cell</td><td>Tail (flagellum); many mitochondria</td><td>Swim to egg; carry genetic info</td></tr>
+        <tr><td>Red blood cell</td><td>Biconcave disc; no nucleus; haemoglobin</td><td>Carry oxygen</td></tr>
+        <tr><td>Nerve cell</td><td>Very long; myelin sheath; dendrites</td><td>Carry electrical impulses fast</td></tr>
+        <tr><td>Root hair cell</td><td>Large surface area (hair-like extension)</td><td>Absorb water & minerals from soil</td></tr>
+        <tr><td>Palisade cell</td><td>Packed with chloroplasts; near leaf top</td><td>Maximise photosynthesis</td></tr>
+        <tr><td>Ciliated epithelial</td><td>Tiny hairs (cilia) on surface</td><td>Move mucus/pathogens out of airways</td></tr>
+      </table>
+      <div class="point">Most animal cells <strong>differentiate early</strong>; most plant cells <strong>retain ability to differentiate throughout life</strong>.</div>
+    </div>
+  </div>
+
+  <!-- Mitosis & Cell Cycle -->
+  <div class="topic no-break">
+    <div class="topic-title b1"><span class="topic-code">4.1.2.2</span> Mitosis & The Cell Cycle</div>
+    <div class="topic-body b1-bg">
+      <div class="point">Mitosis produces <strong>two genetically identical daughter cells</strong> — used for growth, repair and replacement.</div>
+      <div class="sub-head">Steps of Mitosis</div>
+      <div class="point"><strong>1. Growth:</strong> Cell grows; DNA replicates → chromosomes are now double-stranded.</div>
+      <div class="point"><strong>2. Condensation:</strong> Chromosomes condense and become visible.</div>
+      <div class="point"><strong>3. Alignment:</strong> Nuclear membrane breaks down; chromosomes line up at the centre.</div>
+      <div class="point"><strong>4. Separation:</strong> One copy of each chromosome pulled to each end of the cell.</div>
+      <div class="point"><strong>5. Division:</strong> Cytoplasm divides → two identical cells formed.</div>
+      <div class="exam-tip"><strong>⚡ Exam Tip</strong> Humans have 23 pairs = 46 chromosomes. After mitosis, each daughter cell has the same number (46). Don't confuse with meiosis (not in B1–4).</div>
+    </div>
+  </div>
+
+  <!-- Stem Cells -->
+  <div class="topic no-break">
+    <div class="topic-title b1"><span class="topic-code">4.1.2.3</span> Stem Cells</div>
+    <div class="topic-body b1-bg">
+      <div class="point">Stem cells are <strong>undifferentiated</strong> cells that can divide and develop into specialised cells.</div>
+      <div class="two-col">
+        <div class="col-box">
+          <h4>Human stem cells</h4>
+          <div class="point"><strong>Embryonic:</strong> can become almost any cell type (totipotent); used in research</div>
+          <div class="point"><strong>Adult (bone marrow):</strong> can form blood cells; used in leukaemia treatment</div>
+        </div>
+        <div class="col-box">
+          <h4>Plant meristems</h4>
+          <div class="point">Found at root and shoot tips</div>
+          <div class="point">Can differentiate into <em>any</em> plant cell type throughout life</div>
+          <div class="point">Used to clone plants cheaply</div>
+        </div>
+      </div>
+      <div class="highlight-box"><strong>Medical Uses</strong>Potential to treat: diabetes (grow new insulin-producing cells), paralysis (grow nerve cells). Ethical debate around embryonic stem cell use.</div>
+    </div>
+  </div>
+
+  <!-- Transport -->
+  <div class="topic no-break">
+    <div class="topic-title b1"><span class="topic-code">4.1.3.1–3</span> Diffusion, Osmosis & Active Transport</div>
+    <div class="topic-body b1-bg">
+      <table class="mini-table">
+        <tr><th>Process</th><th>Definition</th><th>Energy needed?</th><th>Direction</th></tr>
+        <tr><td><strong>Diffusion</strong></td><td>Net movement of particles from high → low concentration</td><td>No</td><td>Down conc. gradient</td></tr>
+        <tr><td><strong>Osmosis</strong></td><td>Net movement of <em>water</em> across a partially permeable membrane from dilute → concentrated solution</td><td>No</td><td>Down water potential gradient</td></tr>
+        <tr><td><strong>Active transport</strong></td><td>Movement of substances against the concentration gradient using energy (ATP)</td><td>Yes (from respiration)</td><td>Against conc. gradient</td></tr>
+      </table>
+      <div class="exam-tip"><strong>⚡ Exam Tip — Osmosis</strong> In a <em>concentrated</em> solution, cells lose water → shrivel/plasmolyse. In a <em>dilute</em> solution, cells gain water → become turgid. Remember: water moves to where there is MORE solute.</div>
+      <div class="practical-box">
+        <strong>🔬 Required Practical 2 — Osmosis in potato</strong>
+        Cut equal cylinders of potato → place in solutions of different salt/sugar concentrations → measure % change in mass. Higher concentration = potato loses mass (water moves out by osmosis).
+      </div>
+      <div class="point"><strong>Active transport example:</strong> Root hair cells absorb nitrate ions from the soil (low concentration → high concentration) using energy from respiration.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════ B2: ORGANISATION ══════════════ -->
+<div class="page section-break">
+
+  <div class="section-header b2">
+    <div class="section-number">B2</div>
+    <div>
+      <h2>Organisation</h2>
+      <p>4.2.1 Principles · 4.2.2 Human Systems · 4.2.3 Plant Organisation</p>
+    </div>
+  </div>
+
+  <!-- Principles of Organisation -->
+  <div class="topic no-break">
+    <div class="topic-title b2"><span class="topic-code">4.2.1</span> Principles of Organisation</div>
+    <div class="topic-body b2-bg">
+      <div class="highlight-box"><strong>Hierarchy</strong>Cell → Tissue → Organ → Organ System → Organism</div>
+      <div class="point"><strong>Tissue</strong> = group of cells with similar structure and function (e.g. muscle tissue)</div>
+      <div class="point"><strong>Organ</strong> = group of tissues performing a specific function (e.g. the stomach)</div>
+      <div class="point"><strong>Organ system</strong> = group of organs working together (e.g. digestive system)</div>
+    </div>
+  </div>
+
+  <!-- Digestive System -->
+  <div class="topic no-break">
+    <div class="topic-title b2"><span class="topic-code">4.2.2.1</span> The Human Digestive System</div>
+    <div class="topic-body b2-bg">
+      <table class="mini-table">
+        <tr><th>Region</th><th>Key Function</th></tr>
+        <tr><td>Mouth</td><td>Digestion of carbohydrates begins (amylase in saliva)</td></tr>
+        <tr><td>Stomach</td><td>Protein digestion begins; HCl kills bacteria; alcohol absorbed</td></tr>
+        <tr><td>Duodenum (small intestine)</td><td>Carb & protein digestion continues; lipid digestion begins; bile neutralises acid</td></tr>
+        <tr><td>Ileum (small intestine)</td><td>Digestion completes; absorption of sugars, amino acids, fatty acids & glycerol via villi</td></tr>
+        <tr><td>Large intestine</td><td>Water absorption; egestion of undigested food</td></tr>
+      </table>
+      <div class="sub-head">Digestive Enzymes</div>
+      <table class="mini-table">
+        <tr><th>Enzyme</th><th>Substrate → Product</th><th>Made in</th></tr>
+        <tr><td>Amylase (carbohydrase)</td><td>Starch → simple sugars (glucose)</td><td>Salivary glands, pancreas</td></tr>
+        <tr><td>Protease</td><td>Proteins → amino acids</td><td>Stomach, pancreas</td></tr>
+        <tr><td>Lipase</td><td>Lipids → fatty acids + glycerol</td><td>Pancreas</td></tr>
+      </table>
+      <div class="point"><strong>Bile</strong> is made in the <strong>liver</strong>, stored in the <strong>gall bladder</strong>. It <strong>emulsifies fats</strong> (breaks into small droplets → bigger surface area for lipase) and neutralises stomach acid (alkaline).</div>
+      <div class="point"><strong>Villi</strong> in the ileum increase surface area for absorption — they have a large surface area, thin walls, and good blood supply.</div>
+      <div class="practical-box">
+        <strong>🔬 Required Practical 3 — Food Tests</strong>
+        Sugars: <em>Benedict's reagent</em> → heat → colour change (blue → brick red = sugar present).
+        Starch: <em>Iodine solution</em> → black/blue = starch present.
+        Lipids: <em>Emulsion test</em> → add ethanol, pour into water → cloudy = lipid present.
+        Protein: <em>Biuret test</em> → add biuret solution → purple = protein present.
+      </div>
+    </div>
+  </div>
+
+  <!-- Heart & Blood Vessels -->
+  <div class="topic no-break">
+    <div class="topic-title b2"><span class="topic-code">4.2.2.2</span> The Heart & Blood Vessels</div>
+    <div class="topic-body b2-bg">
+      <div class="point">The heart is a <strong>double pump</strong>: right side pumps deoxygenated blood to lungs; left side pumps oxygenated blood to the body.</div>
+      <div class="point">Heart order: <strong>Vena cava → Right atrium → Right ventricle → Pulmonary artery → Lungs → Pulmonary vein → Left atrium → Left ventricle → Aorta → Body</strong></div>
+      <table class="mini-table">
+        <tr><th>Vessel</th><th>Direction</th><th>Pressure</th><th>Wall</th><th>Lumen</th></tr>
+        <tr><td><strong>Artery</strong></td><td>Away from heart</td><td>High</td><td>Thick, muscular &amp; elastic</td><td>Narrow</td></tr>
+        <tr><td><strong>Vein</strong></td><td>To heart</td><td>Low</td><td>Thin, less muscle</td><td>Wide + valves</td></tr>
+        <tr><td><strong>Capillary</strong></td><td>Between</td><td>Low</td><td>One cell thick</td><td>Very narrow</td></tr>
+      </table>
+      <div class="exam-tip"><strong>⚡ Exam Tip</strong> Veins have VALVES to prevent backflow. Capillaries are one cell thick so substances can diffuse in/out easily. The left ventricle has the THICKEST walls — it pumps blood all around the body.</div>
+    </div>
+  </div>
+
+  <!-- Blood -->
+  <div class="topic no-break">
+    <div class="topic-title b2"><span class="topic-code">4.2.2.3</span> Blood</div>
+    <div class="topic-body b2-bg">
+      <table class="mini-table">
+        <tr><th>Component</th><th>Function</th></tr>
+        <tr><td><strong>Plasma</strong> (55%)</td><td>Transports CO₂, digested food, urea, hormones; distributes heat</td></tr>
+        <tr><td><strong>Red blood cells</strong></td><td>Carry oxygen using haemoglobin; biconcave disc = large SA; no nucleus = more haemoglobin</td></tr>
+        <tr><td><strong>White blood cells</strong></td><td>Phagocytes (engulf pathogens) and lymphocytes (produce antibodies) — immune defence</td></tr>
+        <tr><td><strong>Platelets</strong></td><td>Cell fragments involved in blood clotting at wound sites</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CHD & Lifestyle -->
+  <div class="topic no-break">
+    <div class="topic-title b2"><span class="topic-code">4.2.2.4–6</span> Coronary Heart Disease & Lifestyle</div>
+    <div class="topic-body b2-bg">
+      <div class="point">CHD = fatty deposits (plaques) build up in coronary arteries → reduced blood/oxygen to heart muscle → <strong>chest pain (angina)</strong> or <strong>heart attack</strong>.</div>
+      <table class="mini-table">
+        <tr><th>Treatment</th><th>How it helps</th><th>Limitation</th></tr>
+        <tr><td>Statins</td><td>Lower blood cholesterol by reducing liver production</td><td>Must be taken for life; some side effects; not suitable for liver disease/pregnancy</td></tr>
+        <tr><td>Stents</td><td>Metal mesh inserted to widen blocked arteries</td><td>Minority need further treatment later</td></tr>
+        <tr><td>Heart transplant</td><td>Replaces failing heart</td><td>Donor shortage; rejection risk; long recovery</td></tr>
+        <tr><td>Replacement valves</td><td>Restore blood flow through heart</td><td>Biological valves wear out; mechanical may cause clots</td></tr>
+      </table>
+      <div class="highlight-box"><strong>Risk Factors for Non-Communicable Disease</strong>Smoking, poor diet (high fat/salt/sugar), alcohol, obesity, lack of exercise, ionising radiation. Obesity → Type 2 diabetes. Smoking → lung cancer & cardiovascular disease. Alcohol → liver disease & brain damage.</div>
+    </div>
+  </div>
+
+  <!-- Cancer -->
+  <div class="topic no-break">
+    <div class="topic-title b2"><span class="topic-code">4.2.2.7</span> Cancer</div>
+    <div class="topic-body b2-bg">
+      <div class="two-col">
+        <div class="col-box">
+          <h4>Benign tumour</h4>
+          <div class="point">Grows slowly; stays within membrane; does NOT spread; usually easily removed</div>
+        </div>
+        <div class="col-box">
+          <h4>Malignant tumour</h4>
+          <div class="point">Grows quickly; invades neighbouring tissue; spreads via bloodstream (<strong>metastasis</strong>)</div>
+        </div>
+      </div>
+      <div class="sub-head">Risk Factors</div>
+      <div class="point">HPV virus (cervical cancer) · Cigarette smoke carcinogens (lung cancer) · UV radiation (skin cancer) · Alcohol · High-fat diet · Ionising radiation · Some genetic factors</div>
+    </div>
+  </div>
+
+  <!-- Plant Tissues -->
+  <div class="topic no-break">
+    <div class="topic-title b2"><span class="topic-code">4.2.3</span> Plant Tissues & Organ System</div>
+    <div class="topic-body b2-bg">
+      <table class="mini-table">
+        <tr><th>Tissue/Structure</th><th>Function</th></tr>
+        <tr><td>Palisade mesophyll</td><td>Packed with chloroplasts at leaf top; maximises light absorption for photosynthesis</td></tr>
+        <tr><td>Spongy mesophyll</td><td>Air spaces for efficient gas exchange; CO₂ diffuses in, O₂ diffuses out</td></tr>
+        <tr><td>Guard cells / Stomata</td><td>Control opening/closing of stomata; regulate gas exchange and water loss</td></tr>
+        <tr><td>Xylem</td><td>Carries water and minerals from roots UP the plant (dead cells; one-way)</td></tr>
+        <tr><td>Phloem</td><td>Carries dissolved sugars from leaves to rest of plant (both ways)</td></tr>
+      </table>
+      <div class="sub-head">Transpiration — factors that increase rate</div>
+      <table class="mini-table">
+        <tr><th>Factor</th><th>Change</th><th>Why</th></tr>
+        <tr><td>Temperature</td><td>↑</td><td>Faster evaporation from cell surfaces</td></tr>
+        <tr><td>Humidity</td><td>↓</td><td>Greater concentration gradient between leaf and air</td></tr>
+        <tr><td>Air movement (wind)</td><td>↑</td><td>Removes water vapour, maintains gradient</td></tr>
+        <tr><td>Light intensity</td><td>↑</td><td>Stomata open wider for photosynthesis</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════ B3: INFECTION & RESPONSE ══════════════ -->
+<div class="page section-break">
+
+  <div class="section-header b3">
+    <div class="section-number">B3</div>
+    <div>
+      <h2>Infection & Response</h2>
+      <p>4.3.1 Communicable Disease · Immunity · Drugs</p>
+    </div>
+  </div>
+
+  <!-- Pathogens -->
+  <div class="topic no-break">
+    <div class="topic-title b3"><span class="topic-code">4.3.1.1</span> Communicable Diseases & Pathogens</div>
+    <div class="topic-body b3-bg">
+      <div class="point">A <strong>pathogen</strong> is a microorganism that causes infectious disease. Types: <strong>viruses, bacteria, fungi, protists</strong>.</div>
+      <div class="point"><strong>Bacteria</strong> reproduce rapidly inside body; produce <strong>toxins</strong> that damage tissues.</div>
+      <div class="point"><strong>Viruses</strong> live INSIDE cells, reproduce inside cells → cause <strong>cell damage</strong>.</div>
+      <div class="point">Spread by: direct contact, water, air (droplets), vectors (e.g. mosquitoes).</div>
+    </div>
+  </div>
+
+  <!-- Diseases Table -->
+  <div class="topic no-break">
+    <div class="topic-title b3"><span class="topic-code">4.3.1.2–5</span> Key Diseases to Know</div>
+    <div class="topic-body b3-bg">
+      <table class="mini-table">
+        <tr><th>Disease</th><th>Pathogen type</th><th>Transmission</th><th>Symptoms</th><th>Treatment/Prevention</th></tr>
+        <tr><td><strong>Measles</strong></td><td>Virus</td><td>Airborne droplets</td><td>Fever, skin rash; can cause infertility in adults</td><td>Vaccination (MMR)</td></tr>
+        <tr><td><strong>HIV/AIDS</strong></td><td>Virus</td><td>Body fluids (sex, needles)</td><td>Flu-like initially; AIDS = immune system destroyed</td><td>Antiretroviral drugs (no cure)</td></tr>
+        <tr><td><strong>Tobacco mosaic virus</strong></td><td>Virus</td><td>Contact between plants</td><td>Mosaic pattern on leaves; reduces photosynthesis</td><td>No cure; reduce spread</td></tr>
+        <tr><td><strong>Salmonella</strong></td><td>Bacteria</td><td>Contaminated food</td><td>Food poisoning (cramps, vomiting, diarrhoea)</td><td>Thorough cooking; poultry vaccination in UK</td></tr>
+        <tr><td><strong>Gonorrhoea</strong></td><td>Bacteria</td><td>Sexual contact (STI)</td><td>Burning urination; discharge; infertility if untreated</td><td>Antibiotics (resistance growing)</td></tr>
+        <tr><td><strong>Athlete's foot</strong></td><td>Fungus</td><td>Contact with infected surfaces</td><td>Dry, red, flaky skin between toes</td><td>Antifungal medication</td></tr>
+        <tr><td><strong>Rose black spot</strong></td><td>Fungus</td><td>Air/water; contact</td><td>Black spots on leaves → yellow → fall off; reduces photosynthesis</td><td>Fungicide; destroy infected leaves</td></tr>
+        <tr><td><strong>Malaria</strong></td><td>Protist (Plasmodium)</td><td>Mosquito bite (vector)</td><td>Fever, sweats, chills, vomiting</td><td>Antimalarial drugs; mosquito nets; no vaccine</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Human Defence -->
+  <div class="topic no-break">
+    <div class="topic-title b3"><span class="topic-code">4.3.1.6</span> Human Defence Systems</div>
+    <div class="topic-body b3-bg">
+      <div class="sub-head">1st Line of Defence (Non-specific)</div>
+      <div class="point"><strong>Skin</strong> — physical barrier; prevents pathogen entry</div>
+      <div class="point"><strong>Nose hairs & mucus</strong> — trap pathogens before they reach lungs</div>
+      <div class="point"><strong>Cilia in trachea</strong> — waft mucus with trapped pathogens up to throat to be swallowed</div>
+      <div class="point"><strong>Stomach acid</strong> (HCl) — kills pathogens in food and swallowed mucus</div>
+      <div class="divider"></div>
+      <div class="sub-head">2nd Line of Defence (Immune System)</div>
+      <div class="two-col">
+        <div class="col-box">
+          <h4>Phagocytes</h4>
+          <div class="point">Engulf and digest pathogens by <strong>phagocytosis</strong></div>
+          <div class="point">Non-specific — attack all pathogens</div>
+        </div>
+        <div class="col-box">
+          <h4>Lymphocytes</h4>
+          <div class="point">Detect antigens on pathogens → produce <strong>antibodies</strong> (specific to antigen)</div>
+          <div class="point">Also produce <strong>antitoxins</strong> to neutralise toxins</div>
+          <div class="point">Create <strong>memory cells</strong> for faster future response</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vaccination -->
+  <div class="topic no-break">
+    <div class="topic-title b3"><span class="topic-code">4.3.1.7</span> Vaccination</div>
+    <div class="topic-body b3-bg">
+      <div class="point">A vaccine introduces <strong>dead or inactive forms</strong> of a pathogen → stimulates white blood cells to produce antibodies and <strong>memory cells</strong>.</div>
+      <div class="point">If the same pathogen enters again, the immune system responds <strong>faster and more strongly</strong> (secondary immune response).</div>
+      <div class="highlight-box"><strong>Herd Immunity</strong>If enough of a population is vaccinated, the disease cannot spread easily — protecting those who cannot be vaccinated (e.g. newborns, immunocompromised). This requires a very high uptake rate.</div>
+      <div class="exam-tip"><strong>⚡ Exam Tip</strong> Vaccines do NOT give you the disease. Memory cells mean future response is FASTER and LARGER than first exposure.</div>
+    </div>
+  </div>
+
+  <!-- Antibiotics & Drug Development -->
+  <div class="topic no-break">
+    <div class="topic-title b3"><span class="topic-code">4.3.1.8–9</span> Antibiotics, Painkillers & Drug Development</div>
+    <div class="topic-body b3-bg">
+      <div class="point"><strong>Antibiotics</strong> (e.g. penicillin) kill bacteria inside the body but <strong>cannot kill viruses</strong>.</div>
+      <div class="point"><strong>Painkillers</strong> treat symptoms but do NOT kill pathogens.</div>
+      <div class="point"><strong>Antibiotic resistance</strong> is growing — caused by: overuse, not completing full course, use in farming. MRSA is a well-known superbug.</div>
+      <div class="sub-head">Drug Development Process</div>
+      <div class="point"><strong>1. Discovery:</strong> Traditionally from plants/microorganisms (aspirin from willow; penicillin from <em>Penicillium</em> mould; digitalis from foxgloves). Now also synthesised in labs.</div>
+      <div class="point"><strong>2. Preclinical testing:</strong> Tested on cells, tissues and live animals for toxicity, efficacy and dose.</div>
+      <div class="point"><strong>3. Clinical trials:</strong> Tested on healthy volunteers (safety) then patients (effectiveness). Very low doses first; dose increased if safe.</div>
+      <div class="point"><strong>4. Double-blind trial:</strong> Some patients get a placebo; neither patients nor doctors know who gets what — removes bias.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════ B4: BIOENERGETICS ══════════════ -->
+<div class="page section-break">
+
+  <div class="section-header b4">
+    <div class="section-number">B4</div>
+    <div>
+      <h2>Bioenergetics</h2>
+      <p>4.4.1 Photosynthesis · 4.4.2 Respiration & Metabolism</p>
+    </div>
+  </div>
+
+  <!-- Photosynthesis -->
+  <div class="topic no-break">
+    <div class="topic-title b4"><span class="topic-code">4.4.1.1</span> The Photosynthetic Reaction</div>
+    <div class="topic-body b4-bg">
+      <div class="equation-box">carbon dioxide + water <u>→<sup>light</sup></u> glucose + oxygen</div>
+      <div class="equation-box">6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</div>
+      <div class="point">Photosynthesis is an <strong>endothermic</strong> reaction — energy is <em>transferred from the environment</em> to the chloroplasts <em>by light</em>.</div>
+      <div class="point">Takes place in <strong>chloroplasts</strong> (contain chlorophyll to absorb light energy).</div>
+    </div>
+  </div>
+
+  <!-- Rate of Photosynthesis -->
+  <div class="topic no-break">
+    <div class="topic-title b4"><span class="topic-code">4.4.1.2</span> Rate of Photosynthesis — Limiting Factors</div>
+    <div class="topic-body b4-bg">
+      <table class="mini-table">
+        <tr><th>Factor</th><th>Effect on rate</th><th>Why</th></tr>
+        <tr><td>Light intensity ↑</td><td>Rate increases (then plateaus)</td><td>More energy for reaction; plateaus when another factor limits</td></tr>
+        <tr><td>CO₂ concentration ↑</td><td>Rate increases (then plateaus)</td><td>More raw material available; plateaus when light/temp limits</td></tr>
+        <tr><td>Temperature ↑</td><td>Rate increases then drops sharply</td><td>Enzymes work faster → then denature above ~45°C</td></tr>
+        <tr><td>Chlorophyll amount ↑</td><td>Rate increases</td><td>More pigment to absorb light</td></tr>
+      </table>
+      <div class="exam-tip"><strong>⚡ Exam Tip — Limiting Factor</strong> When the rate plateaus despite increasing one factor, a DIFFERENT factor is now limiting. E.g. adding more light eventually stops increasing rate if CO₂ runs out.</div>
+      <div class="practical-box">
+        <strong>🔬 Required Practical 5 — Rate of Photosynthesis (pondweed)</strong>
+        Place pondweed (e.g. <em>Elodea</em>) in water at different distances from a lamp. Count oxygen bubbles produced per minute (= rate of photosynthesis). Move lamp further away → less light → fewer bubbles. Use a light meter for accuracy.
+      </div>
+    </div>
+  </div>
+
+  <!-- Uses of Glucose -->
+  <div class="topic no-break">
+    <div class="topic-title b4"><span class="topic-code">4.4.1.3</span> Uses of Glucose from Photosynthesis</div>
+    <div class="topic-body b4-bg">
+      <div class="point"><strong>Respiration</strong> — releases energy for the plant's life processes</div>
+      <div class="point"><strong>Starch</strong> — insoluble storage form of carbohydrate (in cells and storage organs)</div>
+      <div class="point"><strong>Cellulose</strong> — used to build and strengthen cell walls</div>
+      <div class="point"><strong>Lipids</strong> — stored in seeds for energy</div>
+      <div class="point"><strong>Proteins</strong> — glucose + nitrates from soil → amino acids → proteins (for growth and repair)</div>
+    </div>
+  </div>
+
+  <!-- Respiration -->
+  <div class="topic no-break">
+    <div class="topic-title b4"><span class="topic-code">4.4.2.1</span> Aerobic & Anaerobic Respiration</div>
+    <div class="topic-body b4-bg">
+      <div class="sub-head">Aerobic Respiration</div>
+      <div class="equation-box">glucose + oxygen → carbon dioxide + water (+ energy released)</div>
+      <div class="equation-box">C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + energy</div>
+      <div class="point">Occurs in <strong>mitochondria</strong>. Releases a <strong>large amount of energy</strong>. Continuous process in all living cells.</div>
+      <div class="divider"></div>
+      <div class="sub-head">Anaerobic Respiration</div>
+      <div class="point">Occurs when oxygen is <strong>in short supply</strong>. Releases less energy than aerobic. Occurs in <strong>cytoplasm</strong>.</div>
+      <table class="mini-table">
+        <tr><th>Organism</th><th>Equation</th><th>Products</th></tr>
+        <tr><td>Human muscle</td><td>glucose → lactic acid + energy</td><td>Lactic acid (causes muscle fatigue/pain)</td></tr>
+        <tr><td>Yeast / some plants</td><td>glucose → ethanol + carbon dioxide + energy</td><td>Ethanol + CO₂ (used in brewing/bread-making)</td></tr>
+      </table>
+      <table class="mini-table" style="margin-top:8px">
+        <tr><th></th><th>Aerobic</th><th>Anaerobic</th></tr>
+        <tr><td>O₂ needed?</td><td>Yes</td><td>No</td></tr>
+        <tr><td>Energy released</td><td>Large amount</td><td>Small amount (quickly)</td></tr>
+        <tr><td>Products</td><td>CO₂ + H₂O</td><td>Lactic acid (animals) OR ethanol + CO₂ (plants/yeast)</td></tr>
+      </table>
+      <div class="exam-tip"><strong>⚡ Exam Tip</strong> Respiration is NOT the same as breathing. Respiration is a chemical reaction inside CELLS. Breathing (ventilation) moves air in/out of lungs.</div>
+    </div>
+  </div>
+
+  <!-- Response to Exercise -->
+  <div class="topic no-break">
+    <div class="topic-title b4"><span class="topic-code">4.4.2.2</span> Response to Exercise</div>
+    <div class="topic-body b4-bg">
+      <div class="point">During exercise, muscles need more energy → <strong>heart rate ↑, breathing rate ↑, tidal volume ↑</strong> to deliver more O₂ and remove CO₂.</div>
+      <div class="point">If O₂ supply cannot keep up → muscles respire <strong>anaerobically</strong> → lactic acid builds up → <strong>muscle fatigue</strong>.</div>
+      <div class="point"><strong>Oxygen debt:</strong> Extra oxygen needed after exercise to break down lactic acid. Lactic acid is transported to the liver in the blood → oxidised to CO₂ + H₂O, or converted back to glucose/glycogen. This is why you keep breathing fast after exercise.</div>
+      <div class="highlight-box"><strong>Glycogen</strong>Glucose is stored as glycogen in muscles and liver. During long exercise, glycogen reserves deplete → glucose transported from liver → eventually leads to muscle fatigue.</div>
+    </div>
+  </div>
+
+  <!-- Metabolism -->
+  <div class="topic no-break">
+    <div class="topic-title b4"><span class="topic-code">4.4.2.3</span> Metabolism</div>
+    <div class="topic-body b4-bg">
+      <div class="point"><strong>Metabolism</strong> = the sum of ALL chemical reactions occurring in an organism's cells, controlled by enzymes.</div>
+      <div class="two-col">
+        <div class="col-box">
+          <h4>Building up (anabolism)</h4>
+          <div class="point">Glucose → starch/glycogen (storage)</div>
+          <div class="point">Glucose + nitrates → amino acids → proteins</div>
+          <div class="point">Glucose → cellulose (cell walls)</div>
+          <div class="point">Fatty acids + glycerol → lipids (cell membranes/seed storage)</div>
+        </div>
+        <div class="col-box">
+          <h4>Breaking down (catabolism)</h4>
+          <div class="point">Glucose → CO₂ + H₂O (respiration)</div>
+          <div class="point">Excess amino acids → urea (in liver) → excreted by kidneys</div>
+          <div class="point">Lipids → fatty acids + glycerol (energy)</div>
+          <div class="point">Glycogen → glucose (when energy needed)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Reference -->
+  <div class="topic no-break" style="margin-top: 16px;">
+    <div class="topic-title" style="background: #2c2c3e;"><span class="topic-code" style="color:#aaa">ALL TOPICS</span> ⚡ Key Equations & Facts to Memorise</div>
+    <div class="topic-body" style="background: #f9f9ff;">
+      <div class="two-col">
+        <div class="col-box" style="background: var(--b1-light)">
+          <h4>B1 — Cell Biology</h4>
+          <div class="point"><em>Magnification = Image size ÷ Real size</em></div>
+          <div class="point">Eukaryotes: nucleus, mitochondria, ribosomes</div>
+          <div class="point">Prokaryotes: no nucleus, plasmids, binary fission</div>
+          <div class="point">Osmosis: water moves to region of lower water potential</div>
+        </div>
+        <div class="col-box" style="background: var(--b2-light)">
+          <h4>B2 — Organisation</h4>
+          <div class="point">Cell → Tissue → Organ → Organ System → Organism</div>
+          <div class="point">Bile: made in liver, stored in gall bladder, emulsifies fats</div>
+          <div class="point">Arteries: from heart, high pressure, thick walls</div>
+          <div class="point">Malignant = spreads (metastasis); benign = stays put</div>
+        </div>
+        <div class="col-box" style="background: var(--b3-light)">
+          <h4>B3 — Infection & Response</h4>
+          <div class="point">Antibiotics kill bacteria, NOT viruses</div>
+          <div class="point">Phagocytes: engulf; Lymphocytes: antibodies + memory cells</div>
+          <div class="point">Vaccine = dead/inactive pathogen → memory cells</div>
+          <div class="point">Double-blind trial uses placebo to remove bias</div>
+        </div>
+        <div class="col-box" style="background: var(--b4-light)">
+          <h4>B4 — Bioenergetics</h4>
+          <div class="point">Photosynthesis: CO₂ + H₂O → glucose + O₂ (light, chloroplasts)</div>
+          <div class="point">Aerobic: glucose + O₂ → CO₂ + H₂O (mitochondria)</div>
+          <div class="point">Anaerobic (muscle): glucose → lactic acid</div>
+          <div class="point">Anaerobic (yeast): glucose → ethanol + CO₂</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
